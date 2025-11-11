@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DifficultyManager : MonoBehaviour {
+public class DifficultyScal : MonoBehaviour {
 	public float PlayerSpeed { get; private set; }
 	
 	[SerializeField] private float _initialPlayerSpeed = 12.5f;
