@@ -3,11 +3,11 @@ using System.Collections; // <-- ¡AÑADE ESTO!
 
 public class Bootstrapper : MonoBehaviour {
 
-    private UIManager _uiManager;
+    private UICoordinator _UICoordinator;
 
 	private void Start() {
-        // Encontramos la referencia al UIManager
-        _uiManager = FindObjectOfType<UIManager>();
+        // Encontramos la referencia al UICoordinator
+        _UICoordinator = FindObjectOfType<UICoordinator>();
         
         // Iniciamos la corrutina de carga
         StartCoroutine(LoadGameSequence());
@@ -31,8 +31,8 @@ public class Bootstrapper : MonoBehaviour {
         yield return new WaitForSeconds(1.0f); 
         
         // 4. Decirle a la UI que termine la carga
-        if (_uiManager != null) {
-            _uiManager.ShowMainMenu();
+        if (_UICoordinator != null) {
+            _UICoordinator.ShowMainMenu();
         }
     }
 }
