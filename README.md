@@ -10,6 +10,7 @@ Get ready for a high-speed race where the ground is just one option! In BridgeEs
 <div align="center">
   <img src="./Assets/UI/game_icon_small.png" alt="BridgeEscape">
 </div>
+
 ## Features
 
 - **Endless Runner Gameplay**: Run at full speed on a hazardous track
