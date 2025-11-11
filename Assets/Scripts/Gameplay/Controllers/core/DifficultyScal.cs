@@ -9,15 +9,15 @@ public class DifficultyManager : MonoBehaviour {
 	[SerializeField] private float _dificultyRate = 2f;
 
 	private float _difficultyTimer = 0f;
-	private GameStateManager _gameState;
-	private SpawnManager _obstacleSpawnManager;
+	private GameState _gameState;
+	private HitableSpawner _obstacleHitableSpawner;
 
 	private float _currentBaseSpeed;
 	private float _currentSpeedMultiplier = 1f;
 
 	private void Start() {
-		_gameState = FindObjectOfType<GameStateManager>();
-		_obstacleSpawnManager = FindObjectOfType<SpawnManager>(); 
+		_gameState = FindObjectOfType<GameState>();
+		_obstacleHitableSpawner = FindObjectOfType<HitableSpawner>(); 
 		
 		_currentBaseSpeed = _initialPlayerSpeed;
 		PlayerSpeed = _currentBaseSpeed * _currentSpeedMultiplier;
@@ -25,7 +25,7 @@ public class DifficultyManager : MonoBehaviour {
 
 	private void LateUpdate() {
 		if (_gameState.IsGamePlayable) {
-			GameManager.CallRepeating(IncreaseDificulty, ref _difficultyTimer, _dificultyRate);
+			GameUtilities.CallRepeating(IncreaseDificulty, ref _difficultyTimer, _dificultyRate);
 		}
 	}
 
@@ -33,8 +33,8 @@ public class DifficultyManager : MonoBehaviour {
 		_currentBaseSpeed += _speedIncrease;
 		PlayerSpeed = _currentBaseSpeed * _currentSpeedMultiplier;
         
-		if (_obstacleSpawnManager != null && _obstacleSpawnManager.repeatRate > 1f)
-			_obstacleSpawnManager.repeatRate -= _spawnRateIncrease;
+		if (_obstacleHitableSpawner != null && _obstacleHitableSpawner.repeatRate > 1f)
+			_obstacleHitableSpawner.repeatRate -= _spawnRateIncrease;
 	}
     
 	public void SetSpeedMultiplier(float multiplier) {
