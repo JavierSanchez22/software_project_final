@@ -30,20 +30,20 @@ public abstract class Hitable : MonoBehaviour {
 
 	private Rigidbody _rigidbody;
 	private float _spawnRate = 1f;
-	private DifficultyManager _difficultyManager;
+	private DifficultyScal _DifficultyScal;
 	private GameState _GameState;
 
 	private void OnEnable() => SetSpawnRate();
 
 	private void Start() {
 		_rigidbody = GetComponent<Rigidbody>();
-		_difficultyManager = FindObjectOfType<DifficultyManager>();
+		_DifficultyScal = FindObjectOfType<DifficultyScal>();
 		_GameState = FindObjectOfType<GameState>();
 	}
 
 	private void FixedUpdate() {
 		if (_GameState != null && _GameState.IsGameRunning) {
-			Vector3 direction = Vector3.left * (_difficultyManager.PlayerSpeed + _customSpeedMultiplier) * Time.fixedDeltaTime;
+			Vector3 direction = Vector3.left * (_DifficultyScal.PlayerSpeed + _customSpeedMultiplier) * Time.fixedDeltaTime;
 			Vector3 position = transform.position + direction;
 			_rigidbody.MovePosition(position);
 		}
