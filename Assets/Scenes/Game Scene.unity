@@ -9178,7 +9178,7 @@ MonoBehaviour:
     - {fileID: 2100000, guid: 42cae05abc5fc164b8c6ca971af09b08, type: 2}
     unlockCondition:
       phrase: Collect 30 coins
-      isUnlocked: 1
+      isUnlocked: 0
       condition:
         m_PersistentCalls:
           m_Calls:
@@ -9204,7 +9204,7 @@ MonoBehaviour:
     - {fileID: 2100000, guid: 9aa2bac9217cc95458a8b6c912a916e4, type: 2}
     unlockCondition:
       phrase: Reach score 500
-      isUnlocked: 1
+      isUnlocked: 0
       condition:
         m_PersistentCalls:
           m_Calls:
@@ -9230,7 +9230,7 @@ MonoBehaviour:
     - {fileID: 2100000, guid: 149a350287e1d9848b83cc42d25a52a4, type: 2}
     unlockCondition:
       phrase: Collect 100 coins
-      isUnlocked: 1
+      isUnlocked: 0
       condition:
         m_PersistentCalls:
           m_Calls:
