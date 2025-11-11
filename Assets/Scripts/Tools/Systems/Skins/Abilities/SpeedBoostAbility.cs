@@ -6,14 +6,14 @@ public class SpeedBoostAbility : SkinAbility {
 	public float speedMultiplier = 1.15f;
 
 	public override void ApplyAbility(GameObject player) {
-		DifficultyManager dm = Object.FindObjectOfType<DifficultyManager>();
+		DifficultyScal dm = Object.FindObjectOfType<DifficultyScal>();
 		if (dm != null) {
 			dm.SetSpeedMultiplier(speedMultiplier);
 		}
 	}
 
 	public override void RemoveAbility(GameObject player) {
-		DifficultyManager dm = Object.FindObjectOfType<DifficultyManager>();
+		DifficultyScal dm = Object.FindObjectOfType<DifficultyScal>();
 		if (dm != null) {
 			dm.SetSpeedMultiplier(1f);
 		}
