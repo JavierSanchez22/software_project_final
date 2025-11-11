@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using System.Collections;
 
-public class UIManager : MonoBehaviour {
+public class UICoordinator : MonoBehaviour {
 	
 	[Header("Panel References")]
 	[SerializeField] private GameObject _initMenu;
